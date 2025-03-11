@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-meteadata:
+metadata:
   name: nginx-deployment
   labels:
     app: nginx
@@ -16,3 +16,4 @@ spec:
     spec:
       containers:
       - name: nginx
+        image: nginx:latest
