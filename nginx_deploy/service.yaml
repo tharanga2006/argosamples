@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service # This is a Service object
+metadata:
+  name: nginx-service # The name of the Service object
+  labels:
+    app: nginx # The Service object has the label app: nginx
+spec:
+  ports:
+  - port: 80 # The Service object listens on port 80
+    protocol: TCP # The Service object listens for TCP traffic
+    targetPort: 80 # The Service object forwards requests to port 80 on the Pods
+  selector:
+    app: nginx # The Service object selects Pods with the label app: nginx
+  type: NodePort # The Service object is of type LoadBalancer
